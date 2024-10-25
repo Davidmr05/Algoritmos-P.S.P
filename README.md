@@ -32,9 +32,7 @@ La salida deberia ser algo asi:
       Gramática después de eliminar recursividad por la izquierda:
       
       X -> r s X' | r t X'
-      
       X' ->  p X' |  q X' | ε
-      
       Y -> v Y' | v w Y'
       
       Y' ->  u Y' | ε
