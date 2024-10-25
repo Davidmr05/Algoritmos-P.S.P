@@ -1,5 +1,9 @@
 # Eliminación de Recursividad y Cálculo de PRIMEROS, SIGUIENTES, y PREDICCIÓN
 
+David Esteban Martinez
+Antony Barahona
+Franco Comas
+
 ## Archivos en el proyecto
 
 1. **gramatica.py**: 
