@@ -20,11 +20,12 @@
    
    Si tenemos la siguiente gramatica:
    
-      ```X -> X p | X q | r s | r t
-      ```Y -> Y u | v | v w
-      ```Z -> Z x | y z | y w
+      X -> X p | X q | r s | r t
+      Y -> Y u | v | v w
+      Z -> Z x | y z | y w
       
-   La salida deberia ser algo asi:
+
+La salida deberia ser algo asi:
 
       Gramática después de eliminar recursividad por la izquierda:
       
