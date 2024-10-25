@@ -1,0 +1,4 @@
+X -> X p | X q | r s | r t
+Y -> Y u | v | v w
+Z -> Z x | y z | y w
+
