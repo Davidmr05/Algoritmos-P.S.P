@@ -1,7 +1,5 @@
 # Eliminación de Recursividad y Cálculo de PRIMEROS, SIGUIENTES, y PREDICCIÓN
 
-Este repositorio contiene un programa en Python que elimina la recursividad por la izquierda en gramáticas, y calcula los conjuntos de **PRIMEROS**, **SIGUIENTES**, y **PREDICCIÓN** para las reglas de la gramática.
-
 ## Archivos en el proyecto
 
 1. **gramatica.py**: 
@@ -14,5 +12,54 @@ Este repositorio contiene un programa en Python que elimina la recursividad por 
 2. **gramatica.txt**:
    Un archivo de texto que contiene la gramática que quieres procesar. Este archivo puede ser modificado para probar diferentes gramáticas. Las reglas de la gramática deben estar en el formato:
 
-   ```plaintext
-   Regla -> producción1 | producción2 | ... | producciónN
+## Ejecucion
+
+ - Para la ejecucion debemos tener instalado python3
+   -> python3 gramatica.py
+ - La salida varia dependiendo de la gramativa:
+   
+   Si tenemos la siguiente gramatica:
+   
+      ```X -> X p | X q | r s | r t
+      ```Y -> Y u | v | v w
+      ```Z -> Z x | y z | y w
+      
+   La salida deberia ser algo asi:
+
+      Gramática después de eliminar recursividad por la izquierda:
+      
+X -> r s X' | r t X'
+X' ->  p X' |  q X' | ε
+Y -> v Y' | v w Y'
+Y' ->  u Y' | ε
+Z -> y z Z' | y w Z'
+Z' ->  x Z' | ε
+
+Conjuntos de PRIMEROS:
+PRIMERO(X) = {'r'}
+PRIMERO(X') = {'p', 'ε', 'q'}
+PRIMERO(Y) = {'v'}
+PRIMERO(Y') = {'ε', 'u'}
+PRIMERO(Z) = {'y'}
+PRIMERO(Z') = {'x', 'ε'}
+
+Conjuntos de SIGUIENTES:
+SIGUIENTE(X) = {'$'}
+SIGUIENTE(X') = {'$'}
+SIGUIENTE(Y) = set()
+SIGUIENTE(Y') = set()
+SIGUIENTE(Z) = set()
+SIGUIENTE(Z') = set()
+
+Conjuntos de PREDICCIÓN:
+PREDICCIÓN(X) = [{'r'}, {'r'}]
+PREDICCIÓN(X') = [{'p'}, {'q'}, {'$'}]
+PREDICCIÓN(Y) = [{'v'}, {'v'}]
+PREDICCIÓN(Y') = [{'u'}, set()]
+PREDICCIÓN(Z) = [{'y'}, {'y'}]
+PREDICCIÓN(Z') = [{'x'}, set()]
+
+
+      
+
+
